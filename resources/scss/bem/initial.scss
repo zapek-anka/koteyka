@@ -1,0 +1,11 @@
+.initial {
+    margin: 135px auto 60px;
+    padding: 0 85px 0 115px;
+    display: flex;
+
+    &__title {
+        font-size: 36px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+}

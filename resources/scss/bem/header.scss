@@ -1,0 +1,37 @@
+.header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1368px;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+    padding: 10px 80px 10px 120px;
+    background-color: #ffffff;
+    box-shadow: 0px 6px 10px 1px rgb(229,229,229);
+    z-index: 10;
+
+    &__menu {
+        display: inline-flex;
+    }
+
+    &__logo {
+        display: flex;
+    }
+
+    &__item {
+        margin-right: 30px;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 600;
+        color: #1A212F;
+    }
+}

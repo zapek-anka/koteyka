@@ -1,0 +1,15 @@
+@import './node_modules/css-reset-and-normalize/scss/reset-and-normalize';
+
+main {
+    width: 1368px;
+    margin: 0 auto;
+}
+
+.content {
+    display: flex;
+}
+
+@import 'bem/header';
+@import 'bem/initial';
+@import 'bem/filter';
+@import 'bem/cards';

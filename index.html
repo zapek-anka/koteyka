@@ -7,8 +7,328 @@
     <link rel="stylesheet" href="/public/css/style.css">
 </head>
 <body>
-    <header class="header"></header>
-    <main></main>
+    <header class="header">
+        <a href="/" class="header__logo">
+            <img src="/resources/icon/logo.svg" alt="Котейка">
+        </a>
+        <ul class="header__menu">
+            <li class="header__item">
+                <a href="" class="header__link">Почему мы?</a>
+            </li>
+            <li class="header__item">
+                <a href="" class="header__link">Номера</a>
+            </li>
+            <li class="header__item">
+                <a href="" class="header__link">Отзывы</a>
+            </li>
+            <li class="header__item">
+                <a href="" class="header__link">Как нас найти</a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <section class="initial">
+            <h1 class="initial__title">
+                Наши номера
+            </h1>
+        </section>
+        <section class="content">
+            <aside class="filter">
+                <div class="filter__group">
+                    <p class="filter__subtitle">
+                        Цена за сутки,₽
+                    </p>
+                    <div class="filter__inputs">
+                        <div class="filter__wrap m-text">
+                            <input type="text" class="filter__text">
+                        </div>
+                        <div class="filter__wrap m-text">
+                            <input type="text" class="filter__text">
+                        </div>
+                    </div>
+                </div>
+                <div class="filter__group">
+                    <p class="filter__subtitle">
+                        Площадь
+                    </p>
+                    <ul class="filter__inputs m-checkbox">
+                        <li class="filter__wrap">
+                            <input class="filter__checkbox" id="area1" type="checkbox" value="0,63">
+                            <label class="filter__label" for="area1">0,63 м2</label>
+                        </li>
+                        <li class="filter__wrap">
+                            <input class="filter__checkbox" id="area2" type="checkbox" value="0,90">
+                            <label class="filter__label" for="area2">0,90 м2</label>
+                        </li>
+                        <li class="filter__wrap">
+                            <input class="filter__checkbox" id="area3" type="checkbox" value="1,13">
+                            <label class="filter__label" for="area3">1,13 м2</label>
+                        </li>
+                        <li class="filter__wrap">
+                            <input class="filter__checkbox" id="area4" type="checkbox" value="1,56">
+                            <label class="filter__label" for="area4">1,56 м2</label>
+                        </li>
+                        <li class="filter__wrap">
+                            <input class="filter__checkbox" id="area5" type="checkbox" value="2,56">
+                            <label class="filter__label" for="area5">2,56 м2</label>
+                        </li>
+                        <li class="filter__wrap">
+                            <input class="filter__checkbox" id="area6" type="checkbox" value="2,88">
+                            <label class="filter__label" for="area6">2,88 м2</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filter__group">
+                    <p class="filter__subtitle">
+                        Оснащение номера
+                    </p>
+                    <ul class="filter__inputs m-checkbox">
+                        <li class="filter__wrap">
+                            <input class="filter__checkbox" id="empty" type="checkbox" value="Пустой номер">
+                            <label class="filter__label" for="empty">Пустой номер</label>
+                        </li>
+                        <li class="filter__wrap">
+                            <input class="filter__checkbox" id="bed" type="checkbox" value="Лежак">
+                            <label class="filter__label" for="bed">Лежак</label>
+                        </li>
+                        <li class="filter__wrap">
+                            <input class="filter__checkbox" id="scratchie" type="checkbox" value="Когтеточка">
+                            <label class="filter__label" for="scratchie">Когтеточка</label>
+                        </li>
+                        <li class="filter__wrap">
+                            <input class="filter__checkbox" id="yarn" type="checkbox" value="Игровой комплекс">
+                            <label class="filter__label" for="yarn">Игровой комплекс</label>
+                        </li>
+                        <li class="filter__wrap">
+                            <input class="filter__checkbox" id="home" type="checkbox" value="Домик">
+                            <label class="filter__label" for="home">Домик</label>
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="filter__btn">
+                    Применить
+                </button>
+                <button type="button" class="filter__btn filter__btn_white">
+                    Сбросить фильтр
+                </button>
+            </aside>
+            <section class="cards">
+                <div class="cards__item">
+                    <div class="cards__img-wrap">
+                        <img src="/resources/img/1.jpg" alt="" class="cards__img">
+                    </div>
+                    <div class="cards__content">
+                        <h3 class="cards__title">
+                            Эконом
+                        </h3>
+                        <p class="cards__info m-hidden">
+                            Размеры (ШхГхВ) -
+                        </p>
+                        <p class="cards__info">
+                            Площадь - <span class="cards__area">0,63 м2</span>
+                        </p>
+                        <div class="cards__info m-flex">
+                            <span>Оснащение номера</span>
+                            <ul class="cards__icons">
+                                <li class="cards__icons-item">
+                                    <img src="/resources/icon/empty.svg" alt="">
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="cards__info">
+                            Цена за сутки: <span class="cards__price">100₽</span>
+                        </p>
+                        <button class="cards__btn" type="button">
+                            Забронировать
+                        </button>
+                    </div>
+                </div>
+                <div class="cards__item">
+                    <div class="cards__img-wrap">
+                        <img src="/resources/img/2.jpg" alt="" class="cards__img">
+                    </div>
+                    <div class="cards__content">
+                        <h3 class="cards__title">
+                            Эконом плюс
+                        </h3>
+                        <p class="cards__info">
+                            Размеры (ШхГхВ) - <span class="cards__size">90х100х180 см</span>
+                        </p>
+                        <p class="cards__info">
+                            Площадь - <span class="cards__area">0,90 м2</span>
+                        </p>
+                        <div class="cards__info m-flex">
+                            <span>Оснащение номера</span>
+                            <ul class="cards__icons">
+                                <li class="cards__icons-item">
+                                    <img src="/resources/icon/bed.svg" alt="">
+                                </li>
+                                <li class="cards__icons-item">
+                                    <img src="/resources/icon/scratchie.svg" alt="">
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="cards__info">
+                            Цена за сутки: <span class="cards__price">200₽</span>
+                        </p>
+                        <button class="cards__btn" type="button">
+                            Забронировать
+                        </button>
+                    </div>
+                </div>
+                <div class="cards__item">
+                    <div class="cards__img-wrap">
+                        <img src="/resources/img/3.jpg" alt="" class="cards__img">
+                    </div>
+                    <div class="cards__content">
+                        <h3 class="cards__title">
+                            Комфорт
+                        </h3>
+                        <p class="cards__info">
+                            Размеры (ШхГхВ) - <span class="cards__size">100х125х180 см</span>
+                        </p>
+                        <p class="cards__info">
+                            Площадь - <span class="cards__area">1,13 м2</span>
+                        </p>
+                        <div class="cards__info m-flex">
+                            <span>Оснащение номера</span>
+                            <ul class="cards__icons">
+                                <li class="cards__icons-item">
+                                    <img src="/resources/icon/bed.svg" alt="">
+                                </li>
+                                <li class="cards__icons-item">
+                                    <img src="/resources/icon/scratchie.svg" alt="">
+                                </li>
+                                <li class="cards__icons-item">
+                                    <img src="/resources/icon/yarn.svg" alt="">
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="cards__info">
+                            Цена за сутки: <span class="cards__price">250₽</span>
+                        </p>
+                        <button class="cards__btn" type="button">
+                            Забронировать
+                        </button>
+                    </div>
+                </div>
+                <div class="cards__item">
+                    <div class="cards__img-wrap">
+                        <img src="/resources/img/4.jpg" alt="" class="cards__img">
+                    </div>
+                    <div class="cards__content">
+                        <h3 class="cards__title">
+                            Сьют
+                        </h3>
+                        <p class="cards__info">
+                            Размеры (ШхГхВ) - <span class="cards__size">125х125х180 см</span>
+                        </p>
+                        <p class="cards__info">
+                            Площадь - <span class="cards__area">1,56 м2</span>
+                        </p>
+                        <div class="cards__info m-flex">
+                            <span>Оснащение номера</span>
+                            <ul class="cards__icons">
+                                <li class="cards__icons-item">
+                                    <img src="/resources/icon/bed.svg" alt="">
+                                </li>
+                                <li class="cards__icons-item">
+                                    <img src="/resources/icon/scratchie.svg" alt="">
+                                </li>
+                                <li class="cards__icons-item">
+                                    <img src="/resources/icon/yarn.svg" alt="">
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="cards__info">
+                            Цена за сутки: <span class="cards__price">350₽</span>
+                        </p>
+                        <button class="cards__btn" type="button">
+                            Забронировать
+                        </button>
+                    </div>
+                </div>
+                <div class="cards__item">
+                    <div class="cards__img-wrap">
+                        <img src="/resources/img/5.jpg" alt="" class="cards__img">
+                    </div>
+                    <div class="cards__content">
+                        <h3 class="cards__title">
+                            Люкс
+                        </h3>
+                        <p class="cards__info">
+                            Размеры (ШхГхВ) - <span class="cards__size">160х160х180 см</span>
+                        </p>
+                        <p class="cards__info">
+                            Площадь - <span class="cards__area">2,56 м2</span>
+                        </p>
+                        <div class="cards__info m-flex">
+                            <span>Оснащение номера</span>
+                            <ul class="cards__icons">
+                                <li class="cards__icons-item">
+                                    <img src="/resources/icon/bed.svg" alt="">
+                                </li>
+                                <li class="cards__icons-item">
+                                    <img src="/resources/icon/scratchie.svg" alt="">
+                                </li>
+                                <li class="cards__icons-item">
+                                    <img src="/resources/icon/yarn.svg" alt="">
+                                </li>
+                                <li class="cards__icons-item">
+                                    <img src="/resources/icon/home.svg" alt="">
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="cards__info">
+                            Цена за сутки: <span class="cards__price">500₽</span>
+                        </p>
+                        <button class="cards__btn" type="button">
+                            Забронировать
+                        </button>
+                    </div>
+                </div>
+                <div class="cards__item">
+                    <div class="cards__img-wrap">
+                        <img src="/resources/img/6.jpg" alt="" class="cards__img">
+                    </div>
+                    <div class="cards__content">
+                        <h3 class="cards__title">
+                            Супер-Люкс
+                        </h3>
+                        <p class="cards__info">
+                            Размеры (ШхГхВ) - <span class="cards__size">180х160х180 см</span>
+                        </p>
+                        <p class="cards__info">
+                            Площадь - <span class="cards__area">2,88 м2</span>
+                        </p>
+                        <div class="cards__info m-flex">
+                            <span>Оснащение номера</span>
+                            <ul class="cards__icons">
+                                <li class="cards__icons-item">
+                                    <img src="/resources/icon/bed.svg" alt="">
+                                </li>
+                                <li class="cards__icons-item">
+                                    <img src="/resources/icon/scratchie.svg" alt="">
+                                </li>
+                                <li class="cards__icons-item">
+                                    <img src="/resources/icon/yarn.svg" alt="">
+                                </li>
+                                <li class="cards__icons-item">
+                                    <img src="/resources/icon/home.svg" alt="">
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="cards__info">
+                            Цена за сутки: <span class="cards__price">600₽</span>
+                        </p>
+                        <button class="cards__btn" type="button">
+                            Забронировать
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
     <footer class="footer"></footer>
     <script src="/public/js/app.js"></script>
 </body>

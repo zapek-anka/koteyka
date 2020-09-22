@@ -1,0 +1,117 @@
+.filter {
+    width: 300px;
+    margin: 0 20px 0 115px;
+
+    &__subtitle {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    &__group {
+        margin-bottom: 35px;
+    }
+
+    &__btn {
+        width: 185px;
+        height: 42px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        border: 2px solid #FAC663;
+        background-color: #FAC663;
+        border-radius: 25px;
+
+        &_white {
+            background-color: white;
+        }
+    }
+
+    &__inputs {
+        display: flex;
+
+        &.m-checkbox {
+            flex-direction: column;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+
+        &.m-text {
+            margin-right: 10px;
+            margin-bottom: 0;
+            position: relative;
+
+            &::before {
+                content: 'от';
+                font-size: 14px;
+                padding-left: 5px;
+                top: 50%;
+                transform: translateY(-50%);
+                position: absolute;
+            }
+
+            &:last-child {
+                &::before {
+                    content: 'до';
+                }
+            }
+        }
+    }
+
+    &__text {
+        width: 100px;
+        margin-top: 1px;
+        padding-left: 25px;
+        font-size: 14px;
+        border: 1px solid #e1e1e1;
+    }
+
+    &__checkbox {
+        position: absolute;
+        opacity: 0;
+
+        &:checked + label:after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 9px;
+            background: #141312;
+            width: 1px;
+            height: 1px;
+            box-shadow:
+              1px 0 0 #141312,
+              2px 0 0 #141312,
+              3px 0 0 #141312,
+              4px 0 0 #141312,
+              5px 0 0 #141312,
+              5px -1px 0 #141312,
+              5px -2px 0 #141312,
+              5px -3px 0 #141312,
+              5px -4px 0 #141312,
+              5px -5px 0 #141312,
+              5px -6px 0 #141312,
+              5px -7px 0 #141312,
+              5px -8px 0 #141312;
+            transform: rotate(45deg);
+        }
+    }
+
+    &__label {
+        position: relative;
+        font-size: 14px;
+
+        &::before {
+            content: '';
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: text-top;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 1px solid #e1e1e1;
+        }
+    }
+}
