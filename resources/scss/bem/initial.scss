@@ -2,10 +2,78 @@
     margin: 135px auto 60px;
     padding: 0 85px 0 115px;
     display: flex;
+    justify-content: space-between;
 
     &__title {
         font-size: 36px;
         font-weight: bold;
         margin-left: 10px;
+    }
+
+    &__dropdown {
+        position: relative;
+    }
+
+    &__list {
+        position: absolute;
+        width: 174px;
+        padding: 0 20px;
+        z-index: 2;
+        top: 0;
+        right: -27px;
+        background-color: #ffffff;
+        border-radius: 4px;
+        box-shadow: 0 2px 12px rgba(173,152,143,0.18);
+
+
+    }
+
+    &__checked {
+        position: relative;
+        margin: 11px 34px 0 0;
+        padding-left: 12px;
+        font-size: 14px;
+
+        &::before {
+            content: url('../../icon/arrow.svg');
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &::after {
+            content: url('../../icon/dropdown.svg');
+            position: absolute;
+            top: 0;
+            right: -42px;
+            z-index: 3;
+        }
+    }
+
+    &__item {
+        position: relative;
+        font-size: 14px;
+        padding: 11px 0 10px 12px;
+        cursor: pointer;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        &::before {
+            content: url('../../icon/arrow.svg');
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        &.m-down {
+            &::before {
+                transform: translateY(-50%) rotate(180deg);
+            }
+        }
     }
 }
