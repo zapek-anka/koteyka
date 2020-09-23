@@ -32,14 +32,24 @@
                 Наши номера
             </h1>
             <div class="initial__dropdown">
-                <p class="initial__checked">
+                <p class="initial__checked js-checked">
+                    <img class="initial__arrow" src="/resources/icon/arrow.svg" alt="">
                     По площади
                 </p>
-                <ul class="initial__list">
-                    <li class="initial__item js-sort" data-sort="area-up">По площади</li>
-                    <li class="initial__item js-sort m-down" data-sort="area-down">По площади</li>
-                    <li class="initial__item js-sort" data-sort="cost-up">По цене</li>
-                    <li class="initial__item js-sort m-down" data-sort="cost-down">По цене</li>
+                <ul class="initial__list visually-hidden js-dropdown">
+                    <li class="initial__item js-sort" data-sort="area-up">
+                        <img class="initial__arrow" src="/resources/icon/arrow.svg" alt="">
+                        По площади
+                    </li>
+                    <li class="initial__item js-sort" data-sort="area-down">
+                        <img class="initial__arrow m-down" src="/resources/icon/arrow.svg" alt="">
+                        По площади</li>
+                    <li class="initial__item js-sort" data-sort="cost-up">
+                        <img class="initial__arrow" src="/resources/icon/arrow.svg" alt="">
+                        По цене</li>
+                    <li class="initial__item js-sort" data-sort="cost-down">
+                        <img class="initial__arrow m-down" src="/resources/icon/arrow.svg" alt="">
+                        По цене</li>
                 </ul>
             </div>
         </section>

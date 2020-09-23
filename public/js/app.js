@@ -120,15 +120,24 @@ var Koteyka = /*#__PURE__*/function () {
     this.cards = _toConsumableArray(document.querySelectorAll('.js-card'));
     this.applyBtn = document.querySelector('.js-apply');
     this.dropBtn = document.querySelector('.js-drop');
+    this.checked = document.querySelector('.js-checked');
     this.applyBtn.addEventListener('click', this.applyFilters.bind(this));
     this.dropBtn.addEventListener('click', this.dropFilters.bind(this));
+    this.checked.addEventListener('click', this.dropdown.bind(this));
     this.sortingProps = _toConsumableArray(document.querySelectorAll('.js-sort'));
     this.sortingProps.forEach(function (prop) {
       return prop.addEventListener('click', _this.sortCards.bind(_this));
-    }); // console.log(this.cards);
+    });
   }
 
   _createClass(Koteyka, [{
+    key: "dropdown",
+    value: function dropdown() {
+      this.dropdownList = document.querySelector('.js-dropdown');
+      this.dropdownList.classList.toggle('visually-hidden');
+      this.checked.classList.toggle('m-open');
+    }
+  }, {
     key: "applyFilters",
     value: function applyFilters() {
       var _this2 = this;
@@ -170,13 +179,15 @@ var Koteyka = /*#__PURE__*/function () {
     key: "dropFilters",
     value: function dropFilters() {
       this.fromCost = '';
-      this.toCost = '';
-      console.log(this.fromCost);
-      this.dropBtn.classList.add('m-hidden');
+      this.toCost = ''; // this.dropBtn.classList.add('m-hidden');
     }
   }, {
     key: "sortCards",
     value: function sortCards(evt) {
+      this.dropdownList.classList.toggle('visually-hidden');
+      var checked = evt.target.innerHTML;
+      this.checked.innerHTML = checked;
+
       switch (evt.target.dataset.sort) {
         case 'cost-up':
           this.cards.sort(function (a, b) {

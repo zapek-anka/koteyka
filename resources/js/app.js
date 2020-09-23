@@ -5,13 +5,22 @@ class Koteyka {
         this.applyBtn = document.querySelector('.js-apply');
         this.dropBtn = document.querySelector('.js-drop');
 
+        this.checked = document.querySelector('.js-checked');
+
         this.applyBtn.addEventListener('click', this.applyFilters.bind(this));
         this.dropBtn.addEventListener('click', this.dropFilters.bind(this));
 
+        this.checked.addEventListener('click', this.dropdown.bind(this));
+
         this.sortingProps = [...document.querySelectorAll('.js-sort')];
         this.sortingProps.forEach((prop) => prop.addEventListener('click', this.sortCards.bind(this)));
+    }
 
-        // console.log(this.cards);
+    dropdown() {
+        this.dropdownList = document.querySelector('.js-dropdown');
+
+        this.dropdownList.classList.toggle('visually-hidden');
+        this.checked.classList.toggle('m-open');
     }
 
     applyFilters() {
@@ -57,11 +66,14 @@ class Koteyka {
     dropFilters() {
         this.fromCost = '';
         this.toCost = '';
-        console.log(this.fromCost);
-        this.dropBtn.classList.add('m-hidden');
+        // this.dropBtn.classList.add('m-hidden');
     }
 
     sortCards(evt) {
+        this.dropdownList.classList.toggle('visually-hidden');
+        let checked = evt.target.innerHTML;
+        this.checked.innerHTML = checked;
+
         switch (evt.target.dataset.sort) {
             case 'cost-up':
             this.cards.sort((a,b) => {

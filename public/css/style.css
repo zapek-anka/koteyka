@@ -706,19 +706,19 @@ main {
   box-shadow: 0 2px 12px rgba(173, 152, 143, 0.18);
 }
 
+.initial__list.visually-hidden {
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
 .initial__checked {
   position: relative;
   margin: 11px 34px 0 0;
   padding-left: 12px;
   font-size: 14px;
-}
-
-.initial__checked::before {
-  content: url(/images/arrow.svg?f10ace70b61a7c4bba9b676e8b0bf837);
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .initial__checked::after {
@@ -727,6 +727,14 @@ main {
   top: 0;
   right: -42px;
   z-index: 3;
+  transform: rotate(180deg);
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.initial__checked.m-open::after {
+  transform: rotate(180deg) scaleY(-1);
+  filter: FlipV;
 }
 
 .initial__item {
@@ -740,17 +748,8 @@ main {
   margin-bottom: 0;
 }
 
-.initial__item::before {
-  content: url(/images/arrow.svg?f10ace70b61a7c4bba9b676e8b0bf837);
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-
-.initial__item.m-down::before {
-  transform: translateY(-50%) rotate(180deg);
+.initial__arrow.m-down {
+  transform: rotate(180deg);
 }
 
 .filter {
