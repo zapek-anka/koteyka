@@ -262,9 +262,8 @@ var Koteyka = /*#__PURE__*/function () {
 
       var cardsWrap = document.querySelector('.js-content'); // cardsWrap.innerHTML = '';
 
-      this.cards.forEach(function (card) {
-        // console.log(card);
-        cardsWrap.insertAdjacentHTML('beforeend', card);
+      this.cards.forEach(function (card) {// console.log(card);
+        // cardsWrap.insertAdjacentHTML('beforeend', card);
       });
     }
   }]);

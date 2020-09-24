@@ -137,7 +137,7 @@ class Koteyka {
         // cardsWrap.innerHTML = '';
         this.cards.forEach((card) => {
             // console.log(card);
-            cardsWrap.insertAdjacentHTML('beforeend', card);
+            // cardsWrap.insertAdjacentHTML('beforeend', card);
         })
     }
 }
