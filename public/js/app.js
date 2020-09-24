@@ -176,12 +176,6 @@ var Koteyka = /*#__PURE__*/function () {
       });
     }
   }, {
-    key: "dropFilters",
-    value: function dropFilters() {
-      this.fromCost = '';
-      this.toCost = ''; // this.dropBtn.classList.add('m-hidden');
-    }
-  }, {
     key: "sortCards",
     value: function sortCards(evt) {
       this.dropdownList.classList.toggle('visually-hidden');
@@ -258,13 +252,15 @@ var Koteyka = /*#__PURE__*/function () {
             return 0;
           });
           break;
-      }
+      } // console.log(this.cards);
 
-      console.log(this.cards); // let cardsWrap = document.querySelector('.js-content');
-      // cardsWrap.innerHTML = '';
-      // this.cards.forEach((card) => {
-      //     cardsWrap.insertAdjacentHTML('beforeend', card);
-      // })
+
+      var cardsWrap = document.querySelector('.js-content'); // cardsWrap.innerHTML = '';
+
+      this.cards.forEach(function (card) {
+        console.log(card);
+        cardsWrap.insertAdjacentHTML('beforeend', card);
+      });
     }
   }]);
 

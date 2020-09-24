@@ -63,12 +63,6 @@ class Koteyka {
         })
     }
 
-    dropFilters() {
-        this.fromCost = '';
-        this.toCost = '';
-        // this.dropBtn.classList.add('m-hidden');
-    }
-
     sortCards(evt) {
         this.dropdownList.classList.toggle('visually-hidden');
         let checked = evt.target.innerHTML;
@@ -135,12 +129,13 @@ class Koteyka {
             })
             break;
         }
-        console.log(this.cards);
-        // let cardsWrap = document.querySelector('.js-content');
+        // console.log(this.cards);
+        let cardsWrap = document.querySelector('.js-content');
         // cardsWrap.innerHTML = '';
-        // this.cards.forEach((card) => {
-        //     cardsWrap.insertAdjacentHTML('beforeend', card);
-        // })
+        this.cards.forEach((card) => {
+            console.log(card);
+            cardsWrap.insertAdjacentHTML('beforeend', card);
+        })
     }
 }
 
