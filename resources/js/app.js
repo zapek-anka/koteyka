@@ -8,7 +8,6 @@ class Koteyka {
         this.checked = document.querySelector('.js-checked');
 
         this.applyBtn.addEventListener('click', this.applyFilters.bind(this));
-        this.dropBtn.addEventListener('click', this.dropFilters.bind(this));
 
         this.checked.addEventListener('click', this.dropdown.bind(this));
 
@@ -38,26 +37,30 @@ class Koteyka {
             if (card.dataset.cost >= parseInt(this.fromCost) && card.dataset.cost <= parseInt(this.toCost)) {
                 costed.push(card);
             }
-            // else {
-            //     card.classList.add('m-hidden');
-            // }
         })
 
         costed.forEach((card) => {
-            this.areas.forEach((item) => {
-                if (card.dataset.area == item.value) {
+            this.areas.forEach((area) => {
+                if (card.dataset.area == area.value) {
                     sized.push(card);
-                    // card.classList.remove('m-hidden');
                 }
             })
         })
 
-        console.log(sized);
-
-        sized.forEach((card) => {
-            this.items.forEach((item) => {
-                if (card.dataset.area == item.value) {
+        this.items.forEach((item) => {
+            sized.forEach((card) => {
+                if (card.hasAttribute('data-' + item.id)) {
                     complected.push(card);
+                }
+            })
+        })
+        let result = Array.from(new Set(complected));
+        this.cards.forEach((card) => {
+            card.classList.add('m-hidden');
+            result.forEach((item) => {
+                if (card == item) {
+                    card.classList.remove('m-hidden');
+                    console.log(card);
                 }
             })
         })
@@ -133,7 +136,7 @@ class Koteyka {
         let cardsWrap = document.querySelector('.js-content');
         // cardsWrap.innerHTML = '';
         this.cards.forEach((card) => {
-            console.log(card);
+            // console.log(card);
             cardsWrap.insertAdjacentHTML('beforeend', card);
         })
     }

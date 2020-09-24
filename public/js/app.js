@@ -122,7 +122,6 @@ var Koteyka = /*#__PURE__*/function () {
     this.dropBtn = document.querySelector('.js-drop');
     this.checked = document.querySelector('.js-checked');
     this.applyBtn.addEventListener('click', this.applyFilters.bind(this));
-    this.dropBtn.addEventListener('click', this.dropFilters.bind(this));
     this.checked.addEventListener('click', this.dropdown.bind(this));
     this.sortingProps = _toConsumableArray(document.querySelectorAll('.js-sort'));
     this.sortingProps.forEach(function (prop) {
@@ -154,23 +153,29 @@ var Koteyka = /*#__PURE__*/function () {
 
         if (card.dataset.cost >= parseInt(_this2.fromCost) && card.dataset.cost <= parseInt(_this2.toCost)) {
           costed.push(card);
-        } // else {
-        //     card.classList.add('m-hidden');
-        // }
-
+        }
       });
       costed.forEach(function (card) {
-        _this2.areas.forEach(function (item) {
-          if (card.dataset.area == item.value) {
-            sized.push(card); // card.classList.remove('m-hidden');
+        _this2.areas.forEach(function (area) {
+          if (card.dataset.area == area.value) {
+            sized.push(card);
           }
         });
       });
-      console.log(sized);
-      sized.forEach(function (card) {
-        _this2.items.forEach(function (item) {
-          if (card.dataset.area == item.value) {
+      this.items.forEach(function (item) {
+        sized.forEach(function (card) {
+          if (card.hasAttribute('data-' + item.id)) {
             complected.push(card);
+          }
+        });
+      });
+      var result = Array.from(new Set(complected));
+      this.cards.forEach(function (card) {
+        card.classList.add('m-hidden');
+        result.forEach(function (item) {
+          if (card == item) {
+            card.classList.remove('m-hidden');
+            console.log(card);
           }
         });
       });
@@ -258,7 +263,7 @@ var Koteyka = /*#__PURE__*/function () {
       var cardsWrap = document.querySelector('.js-content'); // cardsWrap.innerHTML = '';
 
       this.cards.forEach(function (card) {
-        console.log(card);
+        // console.log(card);
         cardsWrap.insertAdjacentHTML('beforeend', card);
       });
     }
