@@ -8,7 +8,7 @@ class Koteyka {
         this.checked = document.querySelector('.js-checked');
 
         this.sortingProps = [...document.querySelectorAll('.js-sort')];
-        
+
         this.applyBtn.addEventListener('click', this.applyFilters.bind(this));
         this.dropBtn.addEventListener('click', this.dropFilters.bind(this));
 
