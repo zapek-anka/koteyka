@@ -522,7 +522,7 @@ main {
     font-size: 14px;
     cursor: pointer; }
     .initial__checked::after {
-      content: url("../../icon/dropdown.svg");
+      content: url("../../resources/icon/dropdown.svg");
       position: absolute;
       top: 0;
       right: -42px;
@@ -673,7 +673,7 @@ main {
     color: #ffffff;
     cursor: pointer; }
     .cards__btn::after {
-      content: url("../../icon/paw.svg");
+      content: url("../../resources/icon/paw.svg");
       position: absolute;
       height: 34px;
       right: 5px;
