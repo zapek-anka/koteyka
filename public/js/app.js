@@ -121,15 +121,23 @@ var Koteyka = /*#__PURE__*/function () {
     this.applyBtn = document.querySelector('.js-apply');
     this.dropBtn = document.querySelector('.js-drop');
     this.checked = document.querySelector('.js-checked');
-    this.applyBtn.addEventListener('click', this.applyFilters.bind(this));
-    this.checked.addEventListener('click', this.dropdown.bind(this));
     this.sortingProps = _toConsumableArray(document.querySelectorAll('.js-sort'));
+    this.applyBtn.addEventListener('click', this.applyFilters.bind(this));
+    this.dropBtn.addEventListener('click', this.dropFilters.bind(this));
+    this.checked.addEventListener('click', this.dropdown.bind(this));
     this.sortingProps.forEach(function (prop) {
       return prop.addEventListener('click', _this.sortCards.bind(_this));
     });
   }
 
   _createClass(Koteyka, [{
+    key: "dropFilters",
+    value: function dropFilters() {
+      this.cards.forEach(function (card) {
+        card.classList.remove('m-hidden');
+      });
+    }
+  }, {
     key: "dropdown",
     value: function dropdown() {
       this.dropdownList = document.querySelector('.js-dropdown');
@@ -175,7 +183,6 @@ var Koteyka = /*#__PURE__*/function () {
         result.forEach(function (item) {
           if (card == item) {
             card.classList.remove('m-hidden');
-            console.log(card);
           }
         });
       });
@@ -257,13 +264,11 @@ var Koteyka = /*#__PURE__*/function () {
             return 0;
           });
           break;
-      } // console.log(this.cards);
+      }
 
-
-      var cardsWrap = document.querySelector('.js-content'); // cardsWrap.innerHTML = '';
-
-      this.cards.forEach(function (card) {// console.log(card);
-        // cardsWrap.insertAdjacentHTML('beforeend', card);
+      var cardsWrap = document.querySelector('.js-content');
+      this.cards.forEach(function (card) {
+        cardsWrap.insertAdjacentElement('beforeend', card);
       });
     }
   }]);

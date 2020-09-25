@@ -7,12 +7,20 @@ class Koteyka {
 
         this.checked = document.querySelector('.js-checked');
 
+        this.sortingProps = [...document.querySelectorAll('.js-sort')];
+        
         this.applyBtn.addEventListener('click', this.applyFilters.bind(this));
+        this.dropBtn.addEventListener('click', this.dropFilters.bind(this));
 
         this.checked.addEventListener('click', this.dropdown.bind(this));
 
-        this.sortingProps = [...document.querySelectorAll('.js-sort')];
         this.sortingProps.forEach((prop) => prop.addEventListener('click', this.sortCards.bind(this)));
+    }
+
+    dropFilters() {
+        this.cards.forEach((card) => {
+            card.classList.remove('m-hidden');
+        })
     }
 
     dropdown() {
@@ -60,7 +68,6 @@ class Koteyka {
             result.forEach((item) => {
                 if (card == item) {
                     card.classList.remove('m-hidden');
-                    console.log(card);
                 }
             })
         })
@@ -82,6 +89,7 @@ class Koteyka {
                 }
                 return 0;
             })
+
             break;
 
             case 'cost-down':
@@ -132,12 +140,9 @@ class Koteyka {
             })
             break;
         }
-        // console.log(this.cards);
         let cardsWrap = document.querySelector('.js-content');
-        // cardsWrap.innerHTML = '';
         this.cards.forEach((card) => {
-            // console.log(card);
-            // cardsWrap.insertAdjacentHTML('beforeend', card);
+            cardsWrap.insertAdjacentElement('beforeend', card);
         })
     }
 }
